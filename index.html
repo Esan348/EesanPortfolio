@@ -118,6 +118,29 @@
                 margin-right: 0;
             }
         }
+        
+        #toTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #0a3d62;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      /* hidden by default */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+
+    #toTop:hover {
+      background: #08283e;
+    }
     </style>
 </head>
 
@@ -176,12 +199,23 @@
         <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/eesan-loo-1155a924a" target="_blank">www.linkedin.com/in/eesan-loo-1155a924a</a></p>
     </section>
 
-
+  <button id="toTop" onclick="scrollToTop()">↑</button>
     <footer>
         © 2025 Eesan Loo | Portfolio
     </footer>
+<script>
+    const toTopBtn = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 
 </html>
+
 
 
