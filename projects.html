@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Eesan Loo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #0a3d62;
+      color: #fff;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+      padding: 15px 15px;
+      display: inline-block;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #08283e;
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 25px;
+      color: #0a3d62;
+    }
+
+    h2 {
+      padding: 20px;
+      color: #0a3d62;
+      text-align: center;
+      background: #eaf3fa;
+    }
+
+    /* Category section */
+    .category-section {
+      padding: 20px;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      flex: 1 1 280px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .card video {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .vertical-video {
+  display: block;
+  max-height: 200px;   /* adjust height */
+  max-width: 120px;    /* adjust width */
+  margin: 0 auto 10px auto; /* center and add spacing */
+  border-radius: 5px;
+  object-fit: contain; /* keeps aspect ratio */
+  cursor: pointer;
+}
+
+    .card h3 {
+      color: #0a3d62;
+      margin: 8px 0;
+    }
+
+    .card h3 .year {
+      font-size: 0.78em;
+      color: #666;
+      margin-left: 10px;
+      font-weight: normal;
+      white-space: nowrap;
+      /* prevents wrapping */
+    }
+
+    .card p {
+      text-align: justify;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 90%;
+      max-height: 80%;
+    }
+
+    .lightbox video {
+      max-width: 100%;
+      max-height: 50%;
+      border-radius: 8px;
+    }
+
+    .lightbox-poster img {
+      max-width: 50%;
+      max-height: 50%;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      color: white;
+      font-size: 2em;
+      cursor: pointer;
+      user-select: none;
+      top: 20px;
+      right: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #eee;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 8px;
+      }
+
+      .projects {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        max-width: 90%;
+      }
+    }
+
+    #toTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #0a3d62;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      /* hidden by default */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+
+    #toTop:hover {
+      background: #08283e;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div style="font-size:25px;">
+      <strong><a href="index.html" style="color:white; text-decoration:none;">My Portfolio - Eesan Loo</a></strong>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="skills.html">Skills</a>
+    </nav>
+  </header>
+
+  <h1>Projects Experience</h1>
+
+  <!-- Section: Poster Design -->
+  <div class="category-section">
+    <h2>Poster Design</h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+      <div class="projects">
+        <div class="card">
+          <img src="poster1.jpg" alt="Poster 1" onclick="openLightbox('poster1.jpg','30%', '50%')">
+          <h3>Fairy Tales Poster <span class="year">2022 (sem1)</span></h3>
+          <p>This poster features elements from fairy tales, showing dragons and unicorns as opposite extremes. Dragons,
+            represented in dark color, embody the darker aspects of fairy tales. While unicorns are represented in
+            dreamy pink to show a magical and wondrous side. </p> <br>
+          <p><strong>Tools:</strong> Adobe Photoshop</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <img src="poster2.jpg" alt="Poster 2" onclick="openLightbox('poster2.jpg','30%', '50%')">
+          <h3>Cafe Typography Poster <span class="year">2024 (sem6)</span></h3>
+          <p>This is a New Millenium-style poster features two cats running the Cit-Cat Cafe. It incorporates elements
+            of visual correspondence, visual irony, visual exaggeration, visual rhythm, creating a dynamic and engaging
+            visual narrative. </p> <br>
+          <p><strong>Tools:</strong> Adobe Illustrator, Hand Drawing</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <img src="typo1.png" alt="Poster 3" onclick="openLightbox('typo1.png','70%', '70%')">
+          <img src="typo2.jpg" alt="Poster 4" onclick="openLightbox('typo2.jpg','50%', '50%')">
+          <h3>Typography <span class="year">2024 (sem6)</span></h3>
+          <p>These are the previous courswork of typography.</p><br>
+          <p><strong>Malaysia Typography: </strong>
+            A decorative design showcasing Malaysia’s identity, combining national symbols and floral elements with bold, artistic lettering.<Br>
+            
+            <Strong>Happiness Typography: </Strong>
+            A playful and energetic design using bright colors and dynamic letter placement to express joy and positivity.</p><br>
+          <p><strong>Tools:</strong> Adobe Illustrator, Adobe Photoshop</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section: Web Development -->
+  <div class="category-section">
+    <h2>UI/UX Design & Web Development</h2>
+    <h4 style="text-align:center; margin-top:20px;">** Click image to play video **</h4>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+      <div class="projects">
+        <div class="card">
+          <video class="vertical-video" src="coffee.mp4" alt="coffee shop ordering system" onclick="openLightbox('coffee.mp4')"></video>
+          <h3>Coffee Shop Ordering System (UI/UX Design) <span class="year">2025 (sem9)</span></h3>
+          <p>Design an intuitive and user-friendly interface for a food ordering system to reduce human error and
+            improve customer experience.</p><br>
+          <p><strong>Tools:</strong> Figma, Wireframe, Prototyping, User flow diagram</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <video src="spotify.mp4" alt="Spotify Website" onclick="openLightbox('spotify.mp4')"></video>
+          <h3>Spotify Hompage Concept Website <span class="year">2023 (sem4)</span></h3>
+          <p>Designed and developed a mock Spotify homepage featuring the new Premium plan, news updates, and Spotify’s
+            background. This website focused on UI design, user-friendly navigation, and responsive layout.
+          </p><br>
+          <p><strong>Tools:</strong> HTML, CSS, JavaScript, Figma, Xampp, Eclipse</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <video src="food.mp4" alt="food guide Website" onclick="openLightbox('food.mp4')"></video>
+          <h3>Food and Restaurant Guide Website (Foodies.My) <span class="year">2023 (sem3)</span></h3>
+          <p>Developed a simple website shows the food in Malaysia. The user can search for the food and states to view
+            the restaurant. </p><br>
+          <p><strong>Tools:</strong> HTML, CSS, JavaScript, Xampp, Eclipse</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section: System Development -->
+  <div class="category-section">
+    <h2>System Development</h2>
+    <h4 style="text-align:center; margin-top:20px;">** Click image to play video **</h4>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+      <div class="projects">
+        <div class="card">
+          <video src="fyp.mp4" alt="FYP Project" onclick="openLightbox('fyp.mp4')"></video>
+          <h3>Multi-sites Material Inventory System <span class="year">2024-2025 (FYP)</span></h3>
+          <p>Developed a web-based system for Nehemiah Prestress Sdn Bhd with features such as real-time tracking,
+            check-in/checkout, alerts and notifications, reports and analytics, and security and user permissions.</p>
+          <br>
+          <p><strong>Tools:</strong> HTML, CSS, PHP, MySQL, JavaScript, Figma, Apache server, phpMyAdmin, Visual Studio
+            Code</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <video src="insta.mp4" alt="media sharing website" onclick="openLightbox('insta.mp4')"></video>
+          <h3>Media Sharing Website (Instagraham) <span class="year">2024 (sem5)</span></h3>
+          <p>Designed and Developed a website that allows users to post, view, edit, and delete the images. The user can
+            also save the images into an album. The system includes a database to store user information and uploaded
+            images. </p><br>
+          <p><strong>Tools:</strong> HTML, CSS, PHP, MySQL, JavaScript, Apache server, phpMyAdmin</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Section: Video Editing and Animation -->
+  <div class="category-section">
+    <h2>Video Editing & Animation</h2>
+    <h4 style="text-align:center; margin-top:20px;">** Click image to play video **</h4>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+      <div class="projects">
+        <div class="card">
+          <video src="promote.mp4" alt="spotify video" onclick="openLightbox('promote.mp4')"></video>
+          <h3>Spotify New Premium Promotion Video <span class="year">2023 (sem4)</span></h3>
+          <p> Created a video focusing on the “Premium Friend.” It shows the features of the new premium and the steps
+            to redeem the one-month free premium. </p><br>
+          <p><strong>Tools:</strong> Capcut</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <video src="unluck.mp4" alt="animation video" onclick="openLightbox('unluck.mp4')"></video>
+          <h3>Storytelling Animation <span class="year">2022 (sem1)</span></h3>
+          <p>Created an animation storytelling called “A Day of Unlucky Girl.” It is a funny animation that is about 1
+            minute
+            long. </p><br>
+          <p><strong>Tools:</strong> Adobe Illustrator, Adobe Photoshop</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <video src="aquarius.mp4" alt="aquarius video" onclick="openLightbox('aquarius.mp4')"></video>
+          <h3>30s Animation Video <span class="year">2024 (sem7)</span></h3>
+          <p>Developed a 30-seconds animation that showcases the character’s
+            movements, expressions, and actions. </p><br>
+          <p><strong>Tools:</strong> Adobe Illustrator, Adobe Photoshop</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <div class="content" id="lightbox-content"></div>
+  </div>
+
+  <button id="toTop" onclick="scrollToTop()">↑</button>
+
+  <footer>
+    © 2025 Eesan Loo | Portfolio
+  </footer>
+
+  <script>
+    function openLightbox(file, w='70%', h='70%') {
+  const lightbox = document.getElementById("lightbox");
+  const content = document.getElementById("lightbox-content");
+  content.innerHTML = "";
+
+  if (file.endsWith(".mp4")) {
+    const video = document.createElement("video");
+    video.src = file;
+    video.controls = true;
+    video.autoplay = true;
+    video.style.maxWidth = w;
+    video.style.maxHeight = h;
+    video.style.borderRadius = "8px";
+    content.appendChild(video);
+  } else {
+    const img = document.createElement("img");
+    img.src = file;
+    img.style.maxWidth = w;
+    img.style.maxHeight = h;
+    img.style.borderRadius = "8px";
+    content.appendChild(img);
+  }
+
+  lightbox.style.display = "flex";
+}
+
+    function closeLightbox(event) {
+      const lightbox = document.getElementById("lightbox");
+      if (!event || event.target.id === "lightbox" || event.target.classList.contains("close")) {
+        lightbox.style.display = "none";
+      }
+    }
+
+    const toTopBtn = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      toTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+
+</html>

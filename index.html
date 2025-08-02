@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eesan Loo Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: #0a3d62;
+            color: #fff;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 8px;
+            font-weight: bold;
+            padding: 15px 15px;
+            display: inline-block;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #08283e;
+            text-decoration: underline;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            margin-right: 30px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5em;
+            color: #0a3d62;
+        }
+
+        .hero-text p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .buttons a {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            padding: 10px 20px;
+            background: #0a3d62;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .hero img {
+            max-width: 250px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #eee;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 8px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="font-size:25px;">
+            <strong><a href="index.html" style="color:white; text-decoration:none;">My Portfolio - Eesan Loo</a></strong>
+          </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hi, I'm Eesan Loo</h1>
+            <h3>Multimedia Computing Student</h3>
+            <p>Final-year Bachelor’s student in Multimedia Computing, specializing in Web development and UI/UX Design.
+                Experienced in designing intuitive user interfaces, developing websites, and creating engaging
+                multimedia content including videos, posters, and animations. Currently seeking an internship starting
+                in September to apply my skills, contribute to meaningful projects, and further develop my professional
+                experience.</p>
+            <div class="buttons">
+                <a href="projects.html">View Projects</a>
+                <a href="Eesan_Loo_Resume.pdf" target="_blank">View Resume</a>
+                <a href="#contact">Contact Me</a>
+            </div>
+        </div>
+        <img src="profile.jpg" alt="Profile Photo">
+    </section>
+
+    <!-- Education section -->
+<section id="education" style="padding: 40px; background: #fff; text-align: center;">
+    <h2 style="color:#0a3d62; margin-bottom: 20px;">Education</h2>
+    <div style="max-width: 800px; margin: auto; text-align: justify;">
+    <p><strong>Bachelor of Computer Science (Multimedia Computing)</strong><br>
+       Liverpool John Moores University, UK<br>
+       2022 – Present<br>
+    <strong>- First Class Honours (Class I)</strong></p>
+    <br>
+    <p><strong>Foundation in Information Technology</strong><br>
+       YPC International College, Pandan Perdana, Selangor<br>
+       2021 – 2022<br>
+    <strong>- CGPA: 3.7</strong></p>
+       </div>
+</section>
+
+    <!-- contact section-->
+    <section id="contact" style="padding: 40px; background: #eaf3fa; text-align: center;">
+        <h2 style="color:#0a3d62; margin-bottom: 20px;">Contact Me</h2>
+        <p style="margin-bottom: 10px;">Feel free to contact me:</p>
+        <p><strong>Email:</strong> eesanloo2003@gmail.com</p>
+        <p><strong>Phone:</strong> +60 16-548 0851</p>
+        <p><strong>LinkedIn:</strong> <a href="#" target="_blank">www.linkedin.com/in/eesan-loo-1155a924a</a></p>
+    </section>
+
+
+    <footer>
+        © 2025 Eesan Loo | Portfolio
+    </footer>
+</body>
+
+</html>
