@@ -64,7 +64,7 @@
       padding: 20px;
       color: #0a3d62;
       text-align: center;
-      background: #eaf3fa;
+      background: #d2e7f7;
     }
 
     /* Category section */
@@ -85,7 +85,7 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      max-width: 300px;
+      max-width: 400px;
       flex: 1 1 280px;
       display: flex;
       flex-direction: column;
@@ -93,6 +93,7 @@
 
     .card img {
       width: 100%;
+      height: auto;
       border-radius: 5px;
       margin-bottom: 10px;
       cursor: pointer;
@@ -110,7 +111,7 @@
       border-radius: 5px;
       margin-bottom: 10px;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
       transition: transform 0.3s ease;
     }
 
@@ -128,12 +129,14 @@
       cursor: pointer;
     }
 
-    .card h3 {
+    .card h3,
+    .card-content h3 {
       color: #0a3d62;
       margin: 8px 0;
     }
 
-    .card h3 .year {
+    .card h3 .year,
+    .card-content h3 .year {
       font-size: 0.78em;
       color: #666;
       margin-left: 10px;
@@ -191,12 +194,12 @@
       right: 30px;
     }
 
-     footer {
+    footer {
       text-align: center;
       padding: 15px;
       background: #0f598e;
       margin-top: auto;
-      color:white;
+      color: white;
     }
 
     @media (max-width: 768px) {
@@ -258,6 +261,47 @@
       white-space: nowrap;
       border: 1px solid #c7dce8;
     }
+
+    .packaging-section {
+      background: #fdf7f2;
+      border-radius: 10px;
+      padding: 25px;
+    }
+
+    .packaging-card {
+      background: #fffaf7;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .image-gallery {
+      display: flex;
+      margin: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding-bottom: 8px;
+    }
+
+    .image-gallery img {
+      max-height: 400px;
+      max-width: 300px;
+      border-radius: 6px;
+      cursor: pointer;
+      object-fit: contain;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .card-content {
+      padding-top: 12px;
+    }
   </style>
 </head>
 
@@ -273,20 +317,19 @@
     </nav>
   </header>
 
-  <h1>Projects Experience</h1>
+  <h1>Projects Experience</h1><br>
 
   <!-- Section: Poster Design -->
   <div class="category-section">
     <h2>Poster Design</h2>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content:center; padding: 20px;">
       <div class="projects">
         <div class="card">
-          <img src="poster1.jpg" alt="Poster 1" onclick="openLightbox('poster1.jpg','300px', '500px')">
+          <img src="poster1.jpg" alt="Poster 1" style="max-height:800px;"
+            onclick="openLightbox('poster1.jpg','500px', '500px')">
           <h3>Fairy Tales Poster <span class="year">2022 (sem1)</span></h3>
-          <p>This poster features elements from fairy tales, showing dragons and unicorns as opposite extremes. Dragons,
-            represented in dark color, embody the darker aspects of fairy tales. While unicorns are represented in
-            dreamy pink to show a magical and wondrous side. </p> <br>
+
           <div class="tools">
             <span class="tool">Adobe Photoshop</span>
 
@@ -297,11 +340,9 @@
 
       <div class="projects">
         <div class="card">
-          <img src="poster2.jpg" alt="Poster 2" onclick="openLightbox('poster2.jpg','300px', '500px')">
+          <img src="poster2.jpg" alt="Poster 2" onclick="openLightbox('poster2.jpg','500px', '500px')">
           <h3>Cafe Typography Poster <span class="year">2024 (sem6)</span></h3>
-          <p>This is a New Millenium-style poster features two cats running the Cit-Cat Cafe. It incorporates elements
-            of visual correspondence, visual irony, visual exaggeration, visual rhythm, creating a dynamic and engaging
-            visual narrative. </p> <br>
+
           <div class="tools">
             <span class="tool">Adobe Illustrator</span>
             <span class="tool">Hand Drawing</span>
@@ -311,18 +352,10 @@
 
       <div class="projects">
         <div class="card">
-          <img src="typo1.png" alt="Poster 3" onclick="openLightbox('typo1.png','300px', '300px')">
-          <img src="typo2.jpg" alt="Poster 4" onclick="openLightbox('typo2.jpg','300px', '300px')">
+          <img src="typo1.png" alt="Poster 3" onclick="openLightbox('typo1.png','500px', '300px')">
+          <img src="typo2.jpg" alt="Poster 4" onclick="openLightbox('typo2.jpg','500px', '300px')">
           <h3>Typography <span class="year">2024 (sem6)</span></h3>
-          <p>These are the previous courswork of typography.</p><br>
-          <p><strong>Malaysia Typography: </strong>
-            A decorative design showcasing Malaysia’s identity, combining national symbols and floral elements with
-            bold, artistic lettering.<Br>
 
-            <Strong>Happiness Typography: </Strong>
-            A playful and energetic design using bright colors and dynamic letter placement to express joy and
-            positivity.
-          </p><br>
           <div class="tools">
             <span class="tool">Adobe Illustrator</span>
             <span class="tool">Adobe Photoshop</span>
@@ -377,7 +410,7 @@
           <h3>Food and Restaurant Guide Website (Foodies.My) <span class="year">2023 (sem3)</span></h3>
           <p>Developed a simple website shows the food in Malaysia. The user can search for the food and states to view
             the restaurant. </p><br>
-             <div class="tools">
+          <div class="tools">
             <span class="tool">HTML</span>
             <span class="tool">CSS</span>
             <span class="tool">JavaScript</span>
@@ -402,7 +435,7 @@
           <p>Developed a web-based system for Nehemiah Prestress Sdn Bhd with features such as real-time tracking,
             check-in/checkout, alerts and notifications, reports and analytics, and security and user permissions.</p>
           <br>
-           <div class="tools">
+          <div class="tools">
             <span class="tool">HTML</span>
             <span class="tool">CSS</span>
             <span class="tool">PHP</span>
@@ -413,7 +446,7 @@
             <span class="tool">phpMyAdmin</span>
             <span class="tool">Visual Studio Code</span>
           </div>
-          
+
         </div>
       </div>
 
@@ -424,7 +457,7 @@
           <p>Designed and Developed a website that allows users to post, view, edit, and delete the images. The user can
             also save the images into an album. The system includes a database to store user information and uploaded
             images. </p><br>
-             <div class="tools">
+          <div class="tools">
             <span class="tool">HTML</span>
             <span class="tool">CSS</span>
             <span class="tool">PHP</span>
@@ -443,7 +476,7 @@
           <p>Using an Aduino Uno to create a smart environmental monitoring system. The function of Aduino Uno is to
             provide real-time feedback of the soil moisture, temperature, and light intensity of the indoor plant to
             users.</p><br>
-             <div class="tools">
+          <div class="tools">
             <span class="tool">HTML</span>
             <span class="tool">CSS</span>
             <span class="tool">PHP</span>
@@ -473,7 +506,7 @@
           <h3>30s Animation Video <span class="year">2024 (sem7)</span></h3>
           <p>Developed a 30-seconds animation that showcases the character’s
             movements, expressions, and actions. </p><br>
-             <div class="tools">
+          <div class="tools">
             <span class="tool">Adobe Illustrator</span>
             <span class="tool">Adobe Animate</span>
           </div>
@@ -484,9 +517,10 @@
         <div class="card">
           <video src="promote.mp4" alt="spotify video" onclick="openLightbox('promote.mp4')"></video>
           <h3>Spotify New Premium Promotion Video <span class="year">2023 (sem4)</span></h3>
-          <p> Created a video focusing on the “Premium Friend.” It shows the features of the new premium and the steps
+          <p> Created a video focusing on the 15th anniversary Spotify and the new Premium named “Premium Friend.” It
+            shows the features of the new premium and the steps
             to redeem the one-month free premium. </p><br>
-             <div class="tools">
+          <div class="tools">
             <span class="tool">Capcut</span>
           </div>
         </div>
@@ -499,7 +533,7 @@
           <p>Created an animation storytelling called “A Day of Unlucky Girl.” It is a funny animation that is about 1
             minute
             long. </p><br>
-           <div class="tools">
+          <div class="tools">
             <span class="tool">Adobe Illustrator</span>
             <span class="tool">Adobe Photoshop</span>
           </div>
@@ -509,6 +543,69 @@
 
     </div>
   </div>
+
+  <!-- Section: Hand Drawing -->
+  <div class="category-section">
+    <h2>Hand Drawing</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+      
+      <div class="projects">
+        <div class="card">
+          <img src="panda.png" alt="dieline" onclick="openLightbox('panda.png','500px', '500px')">
+          <div class="tools">
+            <span class="tool">Sketchbook</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects">
+        <div class="card">
+          <img src="dog2.png" alt="dieline" onclick="openLightbox('dog2.png','500px', '500px')">
+          <div class="tools">
+            <span class="tool">Sketchbook</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="projects">
+        <div class="card">
+          <img src="dog1.png" alt="dieline" onclick="openLightbox('dog1.png','500px', '500px')">
+          <div class="tools">
+            <span class="tool">Sketchbook</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Packaging Design -->
+  <div class="category-section">
+    <h2>Packaging Design</h2>
+    <div class="projects" style="display: flex; flex-wrap: wrap; gap: 20px; padding: auto; justify-content:center;">
+      <div>
+        <div class="image-gallery">
+          <img src="dieline.png" alt="dieline" onclick="openLightbox('dieline.png')">
+          <div class="image-gallery"
+            style="display: flex; flex-direction: column; flex-wrap: wrap; gap: 20px; align-items: center;">
+            <img src="mock1.png" alt="mockup1" style="max-width:400px;" onclick="openLightbox('mock1.png')">
+            <img src="mock2.png" alt="mockup2" style="max-width:400px;" onclick="openLightbox('mock2.png')">
+          </div>
+        </div>
+      </div>
+      <div class="projects">
+        <div class="card">
+          <img src="brand.jpg" style="" alt="dieline" onclick="openLightbox('brand.jpg')">
+          <h3>Sabah Tea Packaging <span class="year">2024 (sem6)</span></h3>
+          <p>Created a comprehensive packaging design including dieline, mockups, and brand visuals for Sabah Tea.</p>
+          <div class="tools">
+            <span class="tool">Adobe Illustrator</span>
+            <span class="tool">Adobe Photoshop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
@@ -569,6 +666,3 @@
 </body>
 
 </html>
-
-
-
